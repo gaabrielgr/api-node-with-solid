@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { it, describe, expect, beforeEach } from 'vitest';
-import { AuthenticateUseCase } from '../authenticate';
+import { AuthenticateUseCase } from './authenticate';
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository';
 import { hash } from 'bcryptjs';
-import { InvalidCredentialsError } from './invalid-credentials-error';
+import { InvalidCredentialsError } from './errors/invalid-credentials-error';
 
 let usersRepository: InMemoryUsersRepository;
 let sut: AuthenticateUseCase;
