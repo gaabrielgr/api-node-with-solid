@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { it, describe, expect, beforeEach, afterEach } from 'vitest';
+import { it, describe, expect, beforeEach } from 'vitest';
 import { RegisterUseCase } from './register';
 import { compare } from 'bcryptjs';
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository';
