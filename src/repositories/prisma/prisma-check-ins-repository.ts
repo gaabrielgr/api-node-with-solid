@@ -3,7 +3,6 @@ import { CheckIn, Prisma } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 import { CheckInsRepository } from '../check-ins-repository';
 import dayjs from 'dayjs';
-import { i } from 'vitest/dist/reporters-LqC_WI4d';
 
 export class PrismaCheckInsRepository implements CheckInsRepository {
   async findById(id: string) {
