@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { describe, beforeEach, expect, it, vi, afterEach } from 'vitest';
-import { CheckinUseCase } from './check-in';
+import { CheckInUseCase } from './check-in';
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository';
 import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository';
 import { Decimal } from '@prisma/client/runtime/library';
@@ -9,13 +9,13 @@ import { MaxDistanceError } from './errors/max-distance-error';
 
 let checkInsRepository: InMemoryCheckInsRepository;
 let gymsRepository: InMemoryGymsRepository;
-let sut: CheckinUseCase;
+let sut: CheckInUseCase;
 
-describe('CheckinUseCase', () => {
+describe('CheckInUseCase', () => {
   beforeEach(async () => {
     checkInsRepository = new InMemoryCheckInsRepository();
     gymsRepository = new InMemoryGymsRepository();
-    sut = new CheckinUseCase(checkInsRepository, gymsRepository);
+    sut = new CheckInUseCase(checkInsRepository, gymsRepository);
 
     await gymsRepository.create({
       id: 'gym-id-01',
