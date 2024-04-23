@@ -1,8 +1,8 @@
 import { Gym, Prisma } from '@prisma/client';
 
 export interface FindManyNearbyParams {
-  userLatitude: number;
-  userLongitude: number;
+  latitude: number; // Latitude do usuário
+  longitude: number; // Longitude do usuário
 }
 export interface GymsRepository {
   findById(id: string): Promise<Gym | null>;

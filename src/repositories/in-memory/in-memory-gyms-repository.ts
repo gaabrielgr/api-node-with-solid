@@ -11,12 +11,12 @@ export class InMemoryGymsRepository implements GymsRepository {
     return this.items.filter((item) => {
       const distance = getDistanceBetweenCoordinates(
         {
-          latitude: params.userLatitude,
-          longitude: params.userLongitude,
+          latitude: params.latitude, // Latitude do usuário
+          longitude: params.longitude, // Longitude do usuário
         },
         {
-          latitude: item.latitude.toNumber(),
-          longitude: item.longitude.toNumber(),
+          latitude: item.latitude.toNumber(), // Latitude do estabelecimento
+          longitude: item.longitude.toNumber(), // Longitude do estabelecimento
         },
       );
       const MAX_DISTANCE_IN_KILOMETERS = 10; // 10km
