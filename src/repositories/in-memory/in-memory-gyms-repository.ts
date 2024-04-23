@@ -20,7 +20,7 @@ export class InMemoryGymsRepository implements GymsRepository {
         },
       );
       const MAX_DISTANCE_IN_KILOMETERS = 10; // 10km
-      console.log('distance ', distance);
+
       return distance <= MAX_DISTANCE_IN_KILOMETERS;
     });
   }
