@@ -47,6 +47,7 @@ export class CheckInUseCase {
     );
 
     const MAX_DISTANCE_IN_KILOMETERS = 0.1; // 100 metros
+
     if (distance > MAX_DISTANCE_IN_KILOMETERS) {
       throw new MaxDistanceError();
     }
