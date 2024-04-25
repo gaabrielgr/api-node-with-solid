@@ -1,6 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import request from 'supertest';
 import { app } from '@/app';
+import { createAndAuthenticateUser } from '@/utils/test/create-and-authenticate-user';
 
 describe('ProfileController (e2e)', () => {
   beforeAll(async () => {
@@ -12,20 +13,7 @@ describe('ProfileController (e2e)', () => {
   });
 
   it('should be able to list the profile that is authenticated', async () => {
-    await request(app.server).post('/users').send({
-      name: 'Joao',
-      email: 'joao@gmail.com',
-      password: '123456',
-    });
-
-    const responseAuthenticate = await request(app.server)
-      .post('/sessions')
-      .send({
-        email: 'joao@gmail.com',
-        password: '123456',
-      });
-
-    const token = responseAuthenticate.body.token;
+    const { token } = await createAndAuthenticateUser(app);
 
     const response = await request(app.server)
       .get('/me')
