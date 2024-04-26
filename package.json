@@ -7,7 +7,7 @@
     "dev": "tsx watch src/server.ts",
     "start": "node build/server.js",
     "build": "tsup src --out-dir build",
-    "test": "vitest --dir src/use-cases",
+    "test": "vitest --dir src/uses-cases",
     "test:e2e": "vitest --dir src/http",
     "test:coverage": "vitest --coverage",
     "test:ui": "vitest --ui"
