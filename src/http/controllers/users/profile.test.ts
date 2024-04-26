@@ -24,8 +24,8 @@ describe('ProfileController (e2e)', () => {
     expect(response.body.user).toEqual(
       expect.objectContaining({
         id: expect.any(String),
-        name: 'Joao',
-        email: 'joao@gmail.com',
+        name: 'Gabriel',
+        email: 'gabriel@gmail.com',
         created_at: expect.any(String),
       }),
     );
